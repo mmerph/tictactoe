@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic tac toe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumar+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@100;400;700;800&display=swap"
+        rel="stylesheet">
+    <script src="js/functions.js" defer></script>
+</head>
+
+<body>
+    <div class="encabezado">
+        <div class="marca">
+            <svg class="iconoH2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <path
+                    d="M128,100.17a108.42,108.42,0,0,0-8-12.64V56a8,8,0,0,1,16,0V87.53A108.42,108.42,0,0,0,128,100.17ZM232.7,50.48C229,45.7,221.84,40,209,40c-16.85,0-38.46,11.28-57.81,30.16A140.07,140.07,0,0,0,136,87.53V180a8,8,0,0,1-16,0V87.53a140.07,140.07,0,0,0-15.15-17.37C85.49,51.28,63.88,40,47,40,34.16,40,27,45.7,23.3,50.48c-6.82,8.77-12.18,24.08-.21,71.2,6.05,23.83,19.51,33,30.63,36.42A44,44,0,0,0,128,205.27a44,44,0,0,0,74.28-47.17c11.12-3.4,24.57-12.59,30.63-36.42C239.63,95.24,244.85,66.1,232.7,50.48Z">
+                </path>
+            </svg>
+            <h2 class="kumar-one-regular">
+                Mercedes P.
+            </h2>
+        </div>
+
+        <div class="titulo">
+            <h1 class="kumar-one-regular">
+
+            <svg class="iconoH1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <path
+                    d="M222.83,33.54a16,16,0,0,0-18.14,3.15c-.14.14-.26.27-.38.41L187.05,57A111.28,111.28,0,0,0,69,57L51.69,37.1c-.12-.14-.24-.27-.38-.41a16,16,0,0,0-18.14-3.15A16.4,16.4,0,0,0,24,48.46V136c0,49,40.06,89.63,91.56,95.32a4,4,0,0,0,4.44-4v-32l-13.42-13.43a8.22,8.22,0,0,1-.41-11.37,8,8,0,0,1,11.49-.18L128,180.68l10.34-10.35a8,8,0,0,1,11.49.18,8.22,8.22,0,0,1-.41,11.37L136,195.31v32a4,4,0,0,0,4.44,4C191.94,225.62,232,185,232,136V48.46A16.4,16.4,0,0,0,222.83,33.54ZM84,152a12,12,0,1,1,12-12A12,12,0,0,1,84,152Zm20-64a8,8,0,1,1-16,0V69a8,8,0,0,1,16,0Zm32,0a8,8,0,1,1-16,0V64a8,8,0,0,1,16,0Zm16,0V69a8,8,0,0,1,16,0V88a8,8,0,1,1-16,0Zm20,64a12,12,0,1,1,12-12A12,12,0,0,1,172,152Z">
+                </path>
+            </svg>
+
+            Tic Tac Toe
+
+            <svg class="iconoH1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <path
+                    d="M222.83,33.54a16,16,0,0,0-18.14,3.15c-.14.14-.26.27-.38.41L187.05,57A111.28,111.28,0,0,0,69,57L51.69,37.1c-.12-.14-.24-.27-.38-.41a16,16,0,0,0-18.14-3.15A16.4,16.4,0,0,0,24,48.46V136c0,49,40.06,89.63,91.56,95.32a4,4,0,0,0,4.44-4v-32l-13.42-13.43a8.22,8.22,0,0,1-.41-11.37,8,8,0,0,1,11.49-.18L128,180.68l10.34-10.35a8,8,0,0,1,11.49.18,8.22,8.22,0,0,1-.41,11.37L136,195.31v32a4,4,0,0,0,4.44,4C191.94,225.62,232,185,232,136V48.46A16.4,16.4,0,0,0,222.83,33.54ZM84,152a12,12,0,1,1,12-12A12,12,0,0,1,84,152Zm20-64a8,8,0,1,1-16,0V69a8,8,0,0,1,16,0Zm32,0a8,8,0,1,1-16,0V64a8,8,0,0,1,16,0Zm16,0V69a8,8,0,0,1,16,0V88a8,8,0,1,1-16,0Zm20,64a12,12,0,1,1,12-12A12,12,0,0,1,172,152Z">
+                </path>
+            </svg>
+        </div>
+
+            <!-- Botón regresar al menú -->
+            <button onclick="location.href='index.html'">
+                <!-- ÍCONO REGRESAR: pega tu <path fill="currentColor" d="..."> aquí -->
+                <svg class="iconoBoton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                    <path fill="currentColor"
+                        d="M222.14,105.85l-80-80a20,20,0,0,0-28.28,0l-80,80A19.86,19.86,0,0,0,28,120v96a12,12,0,0,0,12,12h64a12,12,0,0,0,12-12V164h24v52a12,12,0,0,0,12,12h64a12,12,0,0,0,12-12V120A19.86,19.86,0,0,0,222.14,105.85ZM204,204H164V152a12,12,0,0,0-12-12H104a12,12,0,0,0-12,12v52H52V121.65l76-76,76,76Z" />
+                </svg>
+                &nbsp; <b>Regresar al menú</b>
+            </button>
+        </h1>
+    </div>
+
+
+
+    <!-- TABLERO + CONTROLES -->
+    <div class="tablero-con-controles">
+
+        <!-- Tablero 3x3. El canvas de la línea ganadora se posiciona encima -->
+        <div class="contenedor-tablero">
+            <table id="tablero">
+                <tr>
+                    <td onclick="Chturn(this)"></td>
+                    <td onclick="Chturn(this)"></td>
+                    <td onclick="Chturn(this)"></td>
+                </tr>
+                <tr>
+                    <td onclick="Chturn(this)"></td>
+                    <td onclick="Chturn(this)"></td>
+                    <td onclick="Chturn(this)"></td>
+                </tr>
+                <tr>
+                    <td onclick="Chturn(this)"></td>
+                    <td onclick="Chturn(this)"></td>
+                    <td onclick="Chturn(this)"></td>
+                </tr>
+            </table>
+            <canvas id="lineaGanadora"></canvas>
+        </div>
+
+        <!-- Panel lateral de controles -->
+        <div class="controles">
+
+            <!-- Indicador de turno. JS actualiza #fichaActual con el SVG de la pieza -->
+            <div id="turno" class="turno-display line-seed-jp-bold">
+                Turno: <span id="fichaActual" class="ficha-turno"></span>
+            </div>
+
+            <!-- Temporizador -->
+            <div id="temporizador" class="kumar-one-regular">03:00</div>
+
+            <!-- Botón reiniciar -->
+            <button onclick="location.reload()">
+                <svg class="iconoBoton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                    <path fill="currentColor"
+                        d="M244,56v48a12,12,0,0,1-12,12H184a12,12,0,1,1,0-24H201.1l-19-17.38c-.13-.12-.26-.24-.38-.37A76,76,0,1,0,127,204h1a75.53,75.53,0,0,0,52.15-20.72,12,12,0,0,1,16.49,17.45A99.45,99.45,0,0,1,128,228h-1.37A100,100,0,1,1,198.51,57.06L220,76.72V56a12,12,0,0,1,24,0Z">
+                    </path>
+                </svg>
+                &nbsp;Reiniciar
+            </button>
+
+            <div class="selectores">
+                <!-- Selector de fichas  -->
+                <div class="selector-piezas">
+                    <p class="line-seed-jp-bold">Fichas:</p>
+                    <label>
+                        <input type="radio" name="fichas" value="1" checked onchange="cambiarFichas(this.value)">
+                        <svg class="iconoBoton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <path fill="#882164"
+                                d="M176,72a16,16,0,1,1-16-16A16,16,0,0,1,176,72Zm68,8a12,12,0,0,1-5.34,10L220,102.42V120A108.12,108.12,0,0,1,112,228H24A20,20,0,0,1,8.41,195.5l.15-.18L92,95.18V76.89C92,41.28,120.57,12.17,155.69,12H156a63.94,63.94,0,0,1,60.58,43.29L238.66,70A12,12,0,0,1,244,80Zm-33.63,0-10.69-7.13a12,12,0,0,1-5-7A40,40,0,0,0,156,36h-.19c-21.95.11-39.8,18.45-39.8,40.89V99.52a12,12,0,0,1-2.79,7.69L32.57,204H53.05l69.74-83.68a12,12,0,1,1,18.43,15.36L84.29,204H112a84.09,84.09,0,0,0,84-84V96a12,12,0,0,1,5.35-10Z" />
+                        </svg>
+                        VS.
+                        <svg class="iconoBoton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <path fill="#e63946"
+                                d="M223.65,29.53a20,20,0,0,0-21.79,4.34c-.2.2-.39.4-.57.61l-15,17.3a115.34,115.34,0,0,0-116.5,0l-15-17.3c-.18-.21-.37-.41-.57-.61A20,20,0,0,0,20,48v88c0,55.14,48.45,100,108,100s108-44.86,108-100V48A20,20,0,0,0,223.65,29.53ZM212,136c0,38.22-31.35,69.93-72,75.21V197l12.49-12.49a12,12,0,0,0-17-17L128,175l-7.51-7.52a12,12,0,0,0-17,17L116,197v14.24c-40.65-5.28-72-37-72-75.21V58.74L58.54,75.47a12,12,0,0,0,16.21,1.76A86,86,0,0,1,96,65.74V88a12,12,0,0,0,24,0V60.35q4-.35,8-.35t8,.35V88a12,12,0,0,0,24,0V65.74a86.2,86.2,0,0,1,21.25,11.49,12,12,0,0,0,16.21-1.76L212,58.74Zm-112,4a16,16,0,1,1-16-16A16,16,0,0,1,100,140Zm88,0a16,16,0,1,1-16-16A16,16,0,0,1,188,140Z" />
+                        </svg>
+                    </label>
+                    <label>
+                        <input type="radio" name="fichas" value="2" onchange="cambiarFichas(this.value)">
+                        <svg class="iconoBoton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <path fill="#882164"
+                                d="M235.79,48c-4.27-5.48-12.4-12-26.88-12-17.86,0-40.5,11.7-60.57,31.3-3,2.89-5.74,5.85-8.34,8.84V56a12,12,0,0,0-24,0V76.14c-2.6-3-5.38-6-8.34-8.84C87.59,47.7,65,36,47.09,36c-14.48,0-22.61,6.54-26.88,12C7,65,12,93.91,19.28,122.66c5.75,22.64,17.8,33,28.88,37.69A48.12,48.12,0,0,0,92,228a47.87,47.87,0,0,0,36-16.28A48,48,0,0,0,212,180a48.51,48.51,0,0,0-4.14-19.65c11.08-4.67,23.13-15,28.88-37.69C244,93.91,249,65,235.79,48ZM92,204a24,24,0,0,1-24-24,24.36,24.36,0,0,1,21.31-24.07,12,12,0,0,0-2.64-23.86A47.63,47.63,0,0,0,65.17,140c-8.19-.29-18-4.92-22.63-23.24-7.41-29.18-8.55-47.35-3.39-54C39.74,62,41.3,60,47.09,60,58.3,60,75.91,69.83,90.9,84.47c15.25,14.9,25.1,31.86,25.1,43.2V180A24,24,0,0,1,92,204Zm121.45-87.25C208.81,135.07,199,139.7,190.82,140a47.54,47.54,0,0,0-21.51-7.92,12,12,0,1,0-2.64,23.86A24.36,24.36,0,0,1,188,180a24,24,0,1,1-48,0V127.67c0-11.34,9.85-28.3,25.1-43.2C180.09,69.83,197.7,60,208.91,60c5.79,0,7.35,2,7.94,2.76C222,69.4,220.87,87.57,213.46,116.75Z" />
+                        </svg>
+                        VS.
+                        <svg class="iconoBoton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <path fill="#e63946"
+                                d="M208,44a91.55,91.55,0,0,0-33.77,6.42c-15.8-24.4-39.72-36.58-40.86-37.15a12,12,0,0,0-10.74,0c-1.14.57-25.06,12.75-40.86,37.15A91.55,91.55,0,0,0,48,44,12,12,0,0,0,36,56V96a92.14,92.14,0,0,0,80,91.22v25.36L85.37,197.27a12,12,0,0,0-10.74,21.46l48,24a12,12,0,0,0,10.74,0l48-24a12,12,0,1,0-10.74-21.46L140,212.58V187.22A92.14,92.14,0,0,0,220,96V56A12,12,0,0,0,208,44Zm-80-6.06c6.37,4.16,17.13,12.31,25.21,24.2A92.63,92.63,0,0,0,128,90.61a92.76,92.76,0,0,0-25.21-28.47C110.87,50.25,121.63,42.1,128,37.94ZM60,96V69.06A68.11,68.11,0,0,1,116,136v26.94A68.12,68.12,0,0,1,60,96Zm136,0a68.12,68.12,0,0,1-56,66.94V136a68.11,68.11,0,0,1,56-66.94Z" />
+                        </svg>
+                    </label>
+                    <label>
+                        <input type="radio" name="fichas" value="3" onchange="cambiarFichas(this.value)">
+                        <svg class="iconoBoton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <path fill="#882164"
+                                d="M72,104a16,16,0,1,1,16,16A16,16,0,0,1,72,104Zm96,16a16,16,0,1,0-16-16A16,16,0,0,0,168,120Zm68-40V192a36,36,0,0,1-36,36H56a36,36,0,0,1-36-36V80A36,36,0,0,1,56,44h60V16a12,12,0,0,1,24,0V44h60A36,36,0,0,1,236,80Zm-24,0a12,12,0,0,0-12-12H56A12,12,0,0,0,44,80V192a12,12,0,0,0,12,12H200a12,12,0,0,0,12-12Zm-12,82a30,30,0,0,1-30,30H86a30,30,0,0,1,0-60h84A30,30,0,0,1,200,162Zm-80-6v12h16V156ZM86,168H96V156H86a6,6,0,0,0,0,12Zm90-6a6,6,0,0,0-6-6H160v12h10A6,6,0,0,0,176,162Z" />
+                        </svg>
+                        VS.
+                        <svg class="iconoBoton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <path fill="#e63946"
+                                d="M128,12A100.11,100.11,0,0,0,28,112c0,24.86,12.86,56.8,34.41,85.44C70.63,208.36,99.64,244,128,244s57.37-35.64,65.59-46.56C215.14,168.8,228,136.86,228,112A100.11,100.11,0,0,0,128,12Zm46.41,171c-13.83,18.38-34.21,37-46.41,37s-32.58-18.61-46.41-37C63.34,158.75,52,131.54,52,112a76,76,0,0,1,152,0C204,131.54,192.66,158.75,174.41,183ZM104,148a36,36,0,0,1-36-36,12,12,0,0,1,12-12,36,36,0,0,1,36,36A12,12,0,0,1,104,148Zm84-36a36,36,0,0,1-36,36,12,12,0,0,1-12-12,36,36,0,0,1,36-36A12,12,0,0,1,188,112Zm-36,72a12,12,0,0,1-12,12H116a12,12,0,0,1,0-24h24A12,12,0,0,1,152,184Z" />
+                        </svg>
+                    </label>
+                </div>
+
+                <!-- Color de celdas (dos pickers) -->
+                <div class="selector-color">
+                    Colores de celda:
+                    <br><br>
+                    <input type="color" id="color1" value="#F288B9"
+                        oninput="document.documentElement.style.setProperty('--color-celda1', this.value)">
+                    <input type="color" id="color2" value="#AAF277"
+                        oninput="document.documentElement.style.setProperty('--color-celda2', this.value)">
+                </div>
+
+                <!-- Color de la línea ganadora -->
+                <div class="selector-color">
+                    Color línea ganadora:
+                    <br><br>
+                    <input type="color" id="colorLinea" value="#882164">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIÁLOGO DE FIN DE JUEGO — oculto por defecto, JS lo muestra al terminar -->
+    <div id="dialogoVictoria" class="dialogo-victoria-oculto">
+        <div class="dialogo-victoria-contenido">
+
+            <!-- ÍCONO DEL DIÁLOGO: pega tu <path fill="currentColor" d="..."> aquí -->
+            <svg class="iconoH1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+                <path fill="currentColor"
+                    d="M229.7,82.84l-175.94-54-.16-.05A20,20,0,0,0,28,48V192a20,20,0,0,0,19.94,20,20.38,20.38,0,0,0,5.66-.81l.16,0,78.24-24V196a20,20,0,0,0,20,20h32a20,20,0,0,0,20-20V165.06l25.7-7.89A20.1,20.1,0,0,0,244,138V102A20.1,20.1,0,0,0,229.7,82.84ZM52,186.58V53.43L132,78V162ZM180,192H156V179.78l24-7.36Zm40-56.95-64,19.63V85.33L220,105Z" />
+            </svg>
+
+            <!-- JS cambia este texto: "¡Gana ✿!", "EMPATE", "⏱ Tiempo agotado" -->
+            <h2 class="kumar-one-regular" id="mensajeVictoria"></h2>
+
+            <!-- JS inserta aquí el SVG de la ficha ganadora -->
+            <div id="fichaGanadora" class="ficha-dialogo"></div>
+
+            <button class="btn-cerrar-dialogo" onclick="cerrarDialogo()">
+                <!-- ÍCONO CERRAR: pega tu <path fill="currentColor" d="..."> aquí -->
+                <svg class="iconoBoton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                    <path fill="currentColor" d="M168.49,104.49,145,128l23.52,23.51a12,12,0,0,1-17,17L128,145l-23.51,23.52a12,12,0,0,1-17-17L111,128,87.51,104.49a12,12,0,0,1,17-17L128,111l23.51-23.52a12,12,0,0,1,17,17ZM236,128A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Z" />
+                </svg>
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
